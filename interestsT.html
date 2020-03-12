@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<title> Interests </title>
+</head>
+
+<body bgcolor="#ffffcc"> <!-- Setting background colour to entire body -->
+	<!-- Inputting header with heading -->
+	<div id="header">
+		<h1> IS1113 PROJECT</h1>
+	</div>
+		<nav>
+			<!-- Creating unordered lists for navigation bar links and dropdowns -->
+			<ul>
+				<li><a href="index.html"> Home </a></li>
+				
+				<li><a href="CVpersonal.html"> CV </a>
+					<ul>
+						<li><a href="CVpersonal.html"> Personal Details </a></li>
+						<li><a href="CVeducation.html"> Educational Details </a></li>
+						<li><a href="CVwork.html"> Work Experience </a></li>
+					</ul>
+				</li>
+
+				<li><a class="navcurrent" href="interestsS.html"> Interests </a>
+					<ul>
+						<li><a href="interestsS.html"> Sports </a></li>
+						<li><a href="interestsT.html"> Travel </a></li>
+					</ul>
+				</li>
+
+				<li><a href="consultancy.html"> Consultancy </a>
+					<ul>
+						<li><a href="consultancy.html"> Online Services </a></li>
+						<li><a href="about.html"> About </a></li>
+					</ul>
+				</li>
+
+				<li><a href="Ebus1.html"> Services </a></li>
+			</ul>
+		</nav>
+
+	<div id="contentarea"> <!-- Inputting area under navigation bar for content -->
+		<h1 id="mainheading"> My Favourite Places to Visit </h1> <!-- Writing the main page heading -->
+			<div id="content"> <!-- inputting bordered area for content to be placed into -->
+				<div id="scroller" style="width: 850px; height: 350px; margin: 0 auto;"> <!-- setting scroller dimensions & position -->
+					<div class="innerScrollArea"><!-- positioning images inside scroller -->
+						<ul> <!-- list of images in scroller --> 
+							<li><a><img src="koln.jpg" width="700" height="350" /></a></li>
+							<li><img src="liverpool.jpg" width="600" height="400" /></li>
+							<li><img src="barcelona.jpg" width="600" height="400" /></li>
+							<li><img src="tokyo.jpg" width="600" height="400" /></li>
+							<li><img src="ny.jpg" width="600" height="400" /></li>
+							<li><img src="bali.jpg" width="600" height="400" /></li>
+						</ul>
+					</div>
+				</div>
+
+				<div id="subheadingleft"><br/><br/><h3><u> Koln: </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left"> Located in the west of Germany, this well-known city is one I am very fond of. I have visited Cologne many times due to family and it is a part of the world I have become very familoar with over the years growing up. The old cathedral is a spectacle in itself in the city centre. There are also beautiful quieter areas down along the river Rhein where you can relax and enjoy a drink. There is always a strong sense of pride from people that are from the city. Everything about it I love and it is a place I will visit many more times. </p><br/><hr/><br/>
+
+
+				<div id="subheadingleft"><h3><u> Liverpool </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left">The famous city located on Merseyside in England doesn't just hold the bragging rights of two Premier League clubs but also a fantaatic tourist city break. I have visited Liverpool once in 2014 for a Liverpool game. Despite this being heavily drowned in its footballing culture, the area boasts a fantastic, modern, clean city centre ideal for shopping and browsing. The architecture is something subtle to note as each building has a unique twist. The famous Royal Albert Dock is a lovely area to explore day or night. Liverpool has also built a fantastic reputation among young Irish holiday tourists for a standout night-life experience.</p><br/><hr/><br/>
+
+				<div id="subheadingleft"><h3><u> Barcelona: </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left"> Often referred to as the capital of Catalonia, Barcelona is an amazing city that offers something for everything. I visited Barcelona once and it is by far one of my favourite places I have visited. The vast gridded system that originated and expanded from the old town gives it its unique historical look. The Sagrada Familia is an obvious claim for every tourists number one priority and I must admit it was incredible and definitely worth the trip to see it. Much of the architecture inspired by Gaudi provides plenty options to visit unique architecture and buildings. And if that's not enough, you have a perfect yellow, sandy beach that runs all along the edge of the city.  </p><br/><hr/><br/>
+
+				<div id="subheadingleft"><h3><u> Tokyo </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left">Tokyo is a city I have never visited before but would love to solely because of its completely different and unique culture that exists at the other side of the world. A highly populated city of tall buildings and bright lights gives home to an absolutely massive tourist attraction. We know the Japanese are known to be a bit mad so what better way to find out more than to visit the city itself!</p><br/><hr/><br/>  
+
+				<div id="subheadingleft"><h3><u> New York </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left"> This city doesn't really even need an explanation and I think you would find it hard to disagree. New York City. The big destination on everyone's bucket list is somewhere that I would love to visit. I have never been to the United States but what an introduction NYC would be. Much like Tokyo, it is known for its extravagantly tall buildings and the highlight of the bright lights falls to Times Square. Also, for your historcal sight-seeing there lies the famous Statue of Liberty waiting for a visit. The question is who isn't interested by the 'Big Apple'? n</p><br/><hr/><br/>
+
+				<div id="subheadingleft"><h3><u> Bali: </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left"> Indonesia is a beautiful country and if you're looking for a place to explore, Bali most likely takes the cake. The greenery and scenic nature on display for a tourist destination that popular is breathtaking. The aerial images and videos of holiday homes situated deep in the woods are nothing short of spectacular and would defintely make for a once in a lifetime experinece! I find the area very interesting due to its popularity among travellers yet the area's ability to not get run over by tourism and still stick to the landscape of their deep-rooted nature. </p><br/><br/> 
+			</div>
+	</div>
+
+<!-- JAVASCRIPT -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var scroller = $('#scroller div.innerScrollArea');
+			var scrollerContent = scroller.children('ul');
+			scrollerContent.children().clone().appendTo(scrollerContent);
+			var curX = 0;
+			scrollerContent.children().each(function(){
+				var $this = $(this);
+				$this.css('left', curX);
+				curX += $this.outerWidth(true);
+			});
+			var fullW = curX / 2;
+			var viewportW = scroller.width();
+
+			// Scrolling speed management
+			var controller = {curSpeed:0, fullSpeed:2};
+			var $controller = $(controller);
+			var tweenToNewSpeed = function(newSpeed, duration)
+			{
+				if (duration === undefined)
+					duration = 600;
+				$controller.stop(true).animate({curSpeed:newSpeed}, duration);
+			};
+
+			// Pause on hover
+			scroller.hover(function(){
+				tweenToNewSpeed(0);
+			}, function(){
+				tweenToNewSpeed(controller.fullSpeed);
+			});
+
+			// Scrolling management; start the automatical scrolling
+			var doScroll = function()
+			{
+				var curX = scroller.scrollLeft();
+				var newX = curX + controller.curSpeed;
+				if (newX > fullW*2 - viewportW)
+					newX -= fullW;
+				scroller.scrollLeft(newX);
+			};
+			setInterval(doScroll, 15);
+			tweenToNewSpeed(controller.fullSpeed);
+		});
+	</script>
+</body>
+
+</html>

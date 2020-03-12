@@ -1,0 +1,298 @@
+/* automatically sets all margins and paddings to 0 */
+	* {
+		padding: 0;
+		margin: 0; }
+
+/* creating header */
+	#header {
+		height: 90px;
+		background-color: #3d3d29;
+		z-index: -1; }
+
+/* designing header heading */
+	#header h1 {
+		position: relative;
+		top: 25px;
+		border: solid 2px white;
+		margin-left: 300px;
+		margin-right: 300px;
+		text-align: center;
+		color: white;	  }
+
+/* creating our horizontal navigation bar */
+	nav {
+		border-top: 2px solid white;
+		height: 35px;
+		background-color: #3d3d29; 
+		z-index: -2;
+		}
+
+/* creating horizontal navigation bar links */
+	nav ul li {
+		list-style-type: none;
+		width: 160px;
+		float: left;
+		}
+
+/* hiding dropdown links until main link is hovered over */
+	nav ul li ul li {
+		display: none;	 
+		opacity: .8; /* creates transparent background */	 
+		}
+
+/* designing our  navigation bar links */
+	nav ul li a {
+		text-decoration: none;
+		color: white;
+		display: block;
+		line-height: 35px;
+		text-align: center;
+		background-color: #3d3d29;	
+		}
+
+/* changing colour of links when cursor hovers over it */
+	nav ul li a:hover {
+		color: #3d3d29;
+		background-color: #ffffcc;  
+		} 
+
+/* displaying dropdown links only when cursor hovers over main link */
+	nav ul li:hover ul li {
+		display: block; 
+		}		
+/* changing colour of navigation link with respect to which page user is on */
+	.navcurrent {
+		color: #3d3d29;
+		background-color: #ffffcc;
+		}
+
+/* creating entire webpage aera under the navigation panel */
+	#contentarea {
+		position: absolute;
+		top: 127px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -3;	
+		}	
+
+/* designing main heading of each page on the website */
+	#mainheading {
+		position: relative;
+		margin-top: 50px;
+		text-align: center;
+		font-weight: heavy;  
+		}
+
+/* creating area for content to be put into */
+	#content {
+		position: relative;
+		margin-top: 40px;
+		margin-left: 10%;
+		margin-right: 10%;
+		line-height: 1.3;
+		}
+/* creating indent for sunheadings in Interests section */
+	#content #subheadingleft {
+		position: relative;
+		margin-left: 5%;
+		}
+
+/* designing page illusion for cv details */
+	#cvpage {
+		background-color: white;
+		margin-top: 40px;
+		margin-left: 10%;
+		margin-right: 10%;
+		padding: 50px 150px 50px 150px;
+		border: solid black;
+		}
+
+/* creating 2 columns for lists of bullet points */
+	#cvbullet {
+		columns: 2;
+		}
+/* changing the line height for cv text */
+	#cvlineheight {
+		line-height: 1.3;
+		}
+
+/* changing line height & font weight for personal details cv section */
+	#pdinfo {
+		line-height: 1;
+		font-weight: bold;	   
+		}
+/* creating indent for personal details cv sub headings*/
+	#pdmargin {
+		margin-left: 20px;
+		color: #3333ff;
+		}
+		
+		/* JQUERY IMAGE SCROLL INTERESTS */
+/* setting border on scroller*/
+	#scroller {
+		position: relative;
+		border: 3px solid black;
+		}
+/* positioning images inside scroller*/
+	#scroller .innerScrollArea {
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		}
+/* fitting images inside scroller area */
+	#scroller ul {
+		padding: 0;
+		margin: 0;
+		position: relative;
+		}
+/* removing list style from images*/
+	#scroller li {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		position: absolute;
+		}
+		
+/* creating width for first column in consulting about section*/
+	#aboutcolumn1 {
+		position: absolute;
+		left: 0;
+		width: 32%;
+		}
+
+/* creating width for second column in consulting about section*/
+	#aboutcolumn2 {
+		position: absolute;
+		left: 34%;
+		width: 32%;
+		}
+
+/* creating width for third column in consulting about section*/
+	#aboutcolumn3 {
+		position: absolute;
+		left: 68%;
+		width: 32%;
+		}
+
+/* positioning image for first column in consulting about section*/
+	#aboutimage1 {
+		position: absolute;
+		margin-top: -15px;
+		border: 2px solid #3333ff;
+		}
+	
+/* positioning image for second column in consulting about section*/	
+	#aboutimage2 {
+		position: absolute;
+		margin-top: -15px;
+		margin-left: 345px;
+		border: 2px solid red;
+		}
+
+/* positioning image for third column in consulting about section*/		
+	#aboutimage3 {
+		position: absolute;
+		margin-top: -15px;
+		margin-left: 685px;
+		border: 2px solid green;
+		}
+
+/* creating container position for consulting services image */
+	#imagecontainer {
+		position: relative;
+		margin-top: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 1240px;
+		height: 350px;
+		border: solid black;
+		}
+/* hiding overflow of image from container */
+	#consultingimage {
+		overflow: hidden;
+		}
+
+/* designing and positioning consulting business logo */
+	#logo {
+		position: absolute;
+		text-align: center;
+		background-color: black;
+		color: white;
+		border-top: 2px solid white;
+		border-bottom: 2px solid white;
+		margin-top: -320px;
+		margin-left: 40px;
+		padding: 10px 40px 10px 40px;
+		}
+
+/* designing and positioning consulting business slogan */
+	#slogan {
+		position: absolute;
+		text-align: center;
+		color: black;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		margin-top: -260px;
+		margin-left: 95px;
+		padding: 5px 40px 5px 40px;
+		}
+
+/* designing and positioning consulting business information */
+	#businessinfo {
+		position: absolute;
+		color: white;
+		background-color: black;
+		margin-top: -40px;
+		margin-left: 250px;
+		}
+/* creating horizontal uordered list for consulting business info */		
+	#businessinfo ul li {
+		list-style-type: none;
+		float: left;
+		padding: 5px;
+		padding-right: 20px;
+		border-top: solid white;
+		border-bottom: solid white;
+		}
+
+/* designing coloured border to separate paragraphs in consulting business section */
+	#border1 {
+		padding-top: 20px;
+		border-top: 2px solid red;
+		text-align: center;
+		line-height: 1.3;	   
+		}
+		
+/* designing coloured border to separate paragraphs in consulting business section */		
+	#border2 {
+		padding-top: 20px;
+		border-top: 2px solid blue;
+		text-align: center;
+		line-height: 1.3; 
+		}
+	
+/* designing coloured border to separate paragraphs in consulting business section */	
+	#border3 {
+		padding-top: 20px;
+		border-top: 2px solid green;
+		border-bottom: 2px solid yellow;
+		text-align: center;
+		line-height: 1.3;
+		}
+		
+/* eliminating bullet points for unordered list */		
+	#border3 ul li {
+		list-style-type: none;
+		}
+
+
+
+   
+	 
+	
+	
+    	 

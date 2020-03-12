@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Interests </title>
+</head>
+
+<body bgcolor="#ffffcc"> <!-- Setting background colour to entire body -->
+	<!-- Inputting header with heading -->
+	<div id="header">
+		<h1> IS1113 PROJECT</h1>
+	</div>
+		<nav>
+			<!-- Creating unordered lists for navigation bar links and dropdowns -->
+			<ul>
+				<li><a href="index.html"> Home </a></li>
+				
+				<li><a href="CVpersonal.html"> CV </a>
+					<ul>
+						<li><a href="CVpersonal.html"> Personal Details </a></li>
+						<li><a href="CVeducation.html"> Educational Details </a></li>
+						<li><a href="CVwork.html"> Work Experience </a></li>
+					</ul>
+				</li>
+
+				<li><a class="navcurrent" href="interestsS.html"> Interests </a>
+					<ul>
+						<li><a href="interestsS.html"> Sports </a></li>
+						<li><a href="interestsT.html"> Travel </a></li>
+					</ul>
+				</li>
+
+				<li><a href="consultancy.html"> Consultancy </a>
+					<ul>
+						<li><a href="consultancy.html"> Online Services </a></li>
+						<li><a href="about.html"> About </a></li>
+					</ul>
+				</li>
+
+				<li><a href="Ebus1.html"> Services </a></li>
+			</ul>
+		</nav>
+		
+	<div id="contentarea"> <!-- Inputting area under navigation bar for content -->
+		<h1 id="mainheading"> My Favourite Sports </h1> <!-- Writing the main page heading -->
+			<div id="content"> <!-- inputting bordered area for content to be placed into -->
+				<div id="scroller" style="width: 900px; height: 350px; margin: 0 auto;"> <!-- setting scroller dimensions & position -->
+					<div class="innerScrollArea"> <!-- positioning images inside scroller -->
+						<ul> <!-- list of images in scroller -->   
+							<li><a href="https://www.bbc.com/sport/football"><img src="liverpoolucl.jpg" width="700" height="350" /></a></li>
+							<li><img src="sprint.jpg" width="600" height="400" /></li>
+							<li><img src="irishrugby.jpg" width="600" height="400" /></li>
+							<li><img src="bradygoal.jpg" width="600" height="400" /></li>
+							<li><img src="indoortrack.jpg" width="600" height="400" /></li>
+							<li><img src="thomondpark.jpg" width="600" height="400" /></li>
+						</ul>
+					</div>
+				</div>
+		  
+				<div id="subheadingleft"><br/><br/><h3><u> Football: </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left">Football comes as no surpise to being most men's favourite interest when it comes to sport, whether it be watching on the TV or lacing up your own pair of boots and hitting the pitch. Football by far takes up the most of my personal hobbies. I play 7-a-side football every Wednesday which always gives me something to look forward to at the start of the week. As well as the game itself, it provides a decent source of exercise during long, hard college weeks without seeing too much of the outside world!<br/><br/>I watch a lot of football at home also. I support Liverpool FC and watch their every game religiously. I enjoy watchnig a lot of Premier League games as well as keeping a keen interest on the Bundesliga. Any major international tournaments such as the Euros and the FIFA World Cup are always brilliant to watch. The support and following of the Irish international team is always something exciting to me as they compete to qualify for one of these major football tournaments. </p><br/><hr/><br/>
+			 
+			 
+				<div id="subheadingleft"><h3><u> Athletics: </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left">Athletics is something that will always be of interest to me due to the lengthly time i spent involved with it. Since a young age, I competed with my local club in a variety of different areas. Winter was always the dreaded cold, wet, mucky Cross-Country season. Runnig mile after mile with mud painted up your calves for the hour was the name of the game. However, the challenging nature of it along with the social aspect of training always made it bearable. I loved to compete during the track and field season, primary in the 100m/200m and long jump events. Similar to football, once you have an interest in a sport you are almost guaranteed to enjoy watching it also. Athletes like Usain Bolt were an attraction to the sport and I would have read his autobiographies and kept up to date on his career as he was still competing.<br/><br/>The Olympics is always something mouthwatering to look forward to. Every four years i love to gain interest in yet another event i never used to watch before. My preferred events such as the sprints and any event with Irish competitors would never be missed! Although I am no longer part of a club, the love and interest in the sport will always stay with me.
+					</p><br/><hr/><br/>
+			 
+				<div id="subheadingleft"><h3><u> Rugby: </u></h3><br/></div> <!-- sub heading with indent -->
+					<p align="left"> Although it doesn't beat football, rugby is still a big interest of mine when it comes to sports. It started when i played for a little while as a kid. Rugby is a sport that already stems from the other men in my family, with my brother playing at a highly competitive level for many years. Although I didn't play for long, I still continued to watch rugby to date. I love it when the competitions like the 6 Nations and the Rugby WOrld Cup are on when the whole nation is hooked to the same TV channel for eighty minutes together.It requires a different taste to other sports but it will always be of interest to me </p><br/><br/>
+			 
+			</div>
+	</div>
+
+<!-- JQUERY JAVASCRIPT PHOTO SCROLLER -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var scroller = $('#scroller div.innerScrollArea');
+			var scrollerContent = scroller.children('ul');
+			scrollerContent.children().clone().appendTo(scrollerContent);
+			var curX = 0;
+			scrollerContent.children().each(function(){
+				var $this = $(this);
+				$this.css('left', curX);
+				curX += $this.outerWidth(true);
+			});
+			var fullW = curX / 2;
+			var viewportW = scroller.width();
+
+			// Scrolling speed management
+			var controller = {curSpeed:0, fullSpeed:2};
+			var $controller = $(controller);
+			var tweenToNewSpeed = function(newSpeed, duration)
+			{
+				if (duration === undefined)
+					duration = 600;
+				$controller.stop(true).animate({curSpeed:newSpeed}, duration);
+			};
+
+			// Pause on hover
+			scroller.hover(function(){
+				tweenToNewSpeed(0);
+			}, function(){
+				tweenToNewSpeed(controller.fullSpeed);
+			});
+
+			// Scrolling management; start the automatical scrolling
+			var doScroll = function()
+			{
+				var curX = scroller.scrollLeft();
+				var newX = curX + controller.curSpeed;
+				if (newX > fullW*2 - viewportW)
+					newX -= fullW;
+				scroller.scrollLeft(newX);
+			};
+			setInterval(doScroll, 15);
+			tweenToNewSpeed(controller.fullSpeed);
+		});
+	</script>
+</body>
+
+</html>

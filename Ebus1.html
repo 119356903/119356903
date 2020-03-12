@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Services </title>
+</head>
+
+<body bgcolor="#ffffcc"> <!-- Setting background colour to entire body -->
+	<!-- Inputting header with heading -->
+	<div id="header">
+		<h1> IS1113 PROJECT</h1>
+	</div>
+		<nav>
+			<!-- Creating unordered lists for navigation bar links and dropdowns -->
+			<ul>
+				<li><a href="index.html"> Home </a></li>
+				
+				<li><a href="CVpersonal.html"> CV </a>
+					<ul>
+						<li><a href="CVpersonal.html"> Personal Details </a></li>
+						<li><a href="CVeducation.html"> Educational Details </a></li>
+						<li><a href="CVwork.html"> Work Experience </a></li>
+					</ul>
+				</li>
+
+				<li><a href="interestsS.html"> Interests </a>
+					<ul>
+						<li><a href="interestsS.html"> Sports </a></li>
+						<li><a href="interestsT.html"> Travel </a></li>
+					</ul>
+				</li>
+
+				<li><a href="consultancy.html"> Consultancy </a>
+					<ul>
+						<li><a href="consultancy.html"> Online Services </a></li>
+						<li><a href="about.html"> About </a></li>
+					</ul>
+				</li>
+
+				<li><a class="navcurrent" href="Ebus1.html"> Services </a></li>
+			</ul>
+		</nav>
+
+	<div id="contentarea"> <!-- Inputting area under navigation bar for content -->
+		<h1 id="mainheading"> Online Consulting Services </h1> <!-- Writing the main page heading -->
+			<div id="content"><hr/><br/> <!-- inputting bordered area for content to be placed into -->
+				<center>
+					<div>
+						<form name="intCalc" method="post">
+					
+							<center> <!-- centering all content within the tag -->
+								<table cellspacing="20"> <!-- controlling space between each service option -->
+									<tr>
+										<!-- sub heading for list of services -->
+										<td><b>Avail of one of our following services:</b></td> 
+									</tr>
+									<tr>
+										<td>Hyperautomation @ €200</td>
+										<td><input type="radio" id="Hyperautomation" name="rdoGroup" value="200"  required /></td>
+									</tr>
+									<tr>
+										<td>Multiexperience @ €500</td>
+										<td><input type="radio" id="Multiexperience" name="rdoGroup" value="500"  /></td>
+									</tr>
+									<tr>
+										<td>Distributed Cloud @ €1000</td>
+										<td><input type="radio" id="DistributedCloud" name="rdoGroup" value="1000" /></td>
+									</tr>
+								</table>
+							</center>
+							<br/>
+								<center> <!-- centering all content within the tag -->
+								 <table cellspacing="10">
+									<tr>
+										<td><b></b></td>
+										<td><b>Amount:</b></td>
+									</tr>
+									<tr>
+										<td>Sub Total</td>
+										<td><input type="text" id="txtSubTot" name="txtSub" readonly  required/></td>
+									</tr>
+									<tr>
+										<td>Discount @ 5%</td>
+										<td><input type="text" id="txtDisc" name="txtDisc" readonly  required/></td>
+									</tr>
+									<tr>
+										<td>+ VAT @ 20%</td>
+										<td><input type="text" id="txtVAT" name="txtVAT" readonly required /></td>
+									</tr>
+									<tr>
+										<td>Total</td>
+										<td><input type="text" id="txtTotal" name="txtTotal" value="" readonly required/></td>
+									</tr>
+								</table>
+							</center>
+						   
+							<br />
+								<center> <!-- centering all content within the tag -->
+									<input type="button" name="btnCalc" id="btnCalc" onclick="calcSub()" value="Calculate Amount"/>
+									<input type="reset" name="btnClear" id="btnClear" value="Clear"/>
+  
+								</center>
+						</form>
+					</div>
+				</center>
+				
+<!-- JAVASCRIPT -->				
+<script type="text/javascript">
+	<!-- creating our function calcSub() -->`	
+	function calcSub(){
+		var argSelection = parseFloat(document.getElementById('txtSubTot').value);
+		var Hyperautomation = parseFloat(document.getElementById('Hyperautomation').value);
+		var Multiexperience = parseFloat(document.getElementById('Multiexperience').value);
+		var DistributedCloud = parseFloat(document.getElementById('DistributedCloud').value);
+		   
+		   
+			if (document.getElementById('Hyperautomation').checked) {
+				document.intCalc.txtSubTot.value = Hyperautomation;
+				argSelection = Hyperautomation;
+				calcVatTotal(argSelection);
+			   
+			}
+		   else if (document.getElementById('Multiexperience').checked) {
+				document.intCalc.txtSubTot.value = Multiexperience;
+				argSelection = Multiexperience;
+				calcVatTotal(argSelection);
+			   
+			}
+			else if (document.getElementById('DistributedCloud').checked) {
+				document.intCalc.txtSubTot.value = DistributedCloud;
+				argSelection = DistributedCloud;
+				calcVatTotal(argSelection);
+			}
+	}
+	   
+	   
+	function calcVatTotal(parmSelection) {
+		var argsubTotal = parseFloat(parmSelection);
+		var argdiscountAmt = parseFloat(argsubTotal * .05);
+		var argvatAmt = parseFloat(argsubTotal * .20);    
+		var argtotalPrice = parseFloat(argsubTotal - argdiscountAmt + argvatAmt);
+		calcDisp(argsubTotal, argdiscountAmt,argvatAmt,argtotalPrice);  
+		}
+
+	function calcDisp(parmsubTotal, parmdiscountAmt, parmvatAmt, parmtotalPrice){
+		document.intCalc.txtSubTot.value = parmsubTotal;
+		document.intCalc.txtDisc.value = parmdiscountAmt;
+		document.intCalc.txtVAT.value = parmvatAmt;
+		document.intCalc.txtTotal.value = parmtotalPrice;
+	}                
+</script>		
+</body>
+</html>
